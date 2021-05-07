@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.4.4'
+    id 'io.spring.dependency-management' version "1.0.11.RELEASE"
+}
+
+group 'com.susamn.awssdk.practice'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.4.5'
+    implementation group: 'software.amazon.awssdk', name: 'bom', version: '2.16.29'
+    implementation group: 'software.amazon.awssdk', name: 'sqs' , version: '2.16.29'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
